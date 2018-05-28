@@ -4,7 +4,7 @@ Funcionalidade: Cadastro de Pessoas
 Contexto:
     Dado que eu tenha iniciado o formulário
 
-@Fluxo
+@Fluxo @Mobile
 Cenário: Iniciando formulário
     Então devo ver a opção de informar meu nome
 

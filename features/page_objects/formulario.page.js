@@ -5,7 +5,7 @@ const EC = require('protractor').ExpectedConditions
 class Form {
   constructor () {
     this.body = $('body')
-    this.startBtn = element.all(by.cssContainingText('.button.general.full.enabled.hover-effect', 'start')).get(0)
+    this.startBtn = element.all(by.xpath("//*[contains(text(),'start')]")).get(2)
     this.nameField = $$('input').get(0)
     this.lastNameField = $$('input').get(1)
     this.emailField = $$('input').get(2)
@@ -15,12 +15,11 @@ class Form {
   }
 
   startForm () {
-    // browser.ignoreSynchronization = true
     browser.waitForAngularEnabled(false)
     browser.get('https://stonepayments.typeform.com/to/yl5PKW')
-    browser.sleep(2000)
-    // this.waitForElement(this.startBtn)
-    return this.body.sendKeys(protractor.Key.ENTER)
+    this.waitForElement(this.startBtn)
+    // this.body.sendKeys(protractor.Key.ENTER)
+    return this.startBtn.click()
   }
 
   typeName (name) {
@@ -55,7 +54,7 @@ class Form {
   }
 
   waitForElement (element) {
-    return browser.wait(EC.visibilityOf(element), 6000)
+    return browser.wait(EC.visibilityOf(element), 10000)
   }
 }
 

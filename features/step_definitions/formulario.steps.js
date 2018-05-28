@@ -42,8 +42,7 @@ When('eu confirmo sem informar um campo obrigatório', function (callback) {
 })
 
 // THEN
-Then('devo ver a opção de informar meu nome', function (callback) {
-  form.waitForElement(form.nameField)
+Then('devo ver a opção de informar meu nome', {timeout: 90 * 1000}, function (callback) {
   form.nameField.isDisplayed().then(function (response) {
     expect(response).to.equal(true)
   })
