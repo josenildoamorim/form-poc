@@ -34,12 +34,19 @@ npm test
 Passos para rodar os testes no chrome versão android
 
 ### Iniciando o WebDriver
+Para baixar o SDK do android, use
 ```
-npm run webdriver_android
+npm run config_webdriver_android
 ```
-Isso pode demorar um tempo considerável. Uma boa hora para um café :)
+Isso pode demorar um tempo considerável, mas será preciso apenas uma vez. Uma boa hora para um café :)
+
+Após a instalação, inicie o webdriver com emulador android
+```
+npm run start_webdriver_android
+```
 
 ## Rodando os testes
+Uma vez que o emulador estiver aberto, para iniciar os testes use
 ```
 npm test_android
 ```
