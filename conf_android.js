@@ -8,7 +8,7 @@ exports.config = {
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
     require: 'features/step_definitions/*.steps.js',
-    tags: ['~@notImplemented'],
+    tags: ['@Mobile'],
     format: ['json:results.json'],
     profile: false,
     ignoreUndefinedDefinitions: true,
