@@ -6,6 +6,7 @@ const { Given, When, Then } = require('cucumber')
 
 // GIVEN
 Given('que eu tenha iniciado o formulário', {timeout: 90 * 1000}, function (callback) {
+  form.openPage()
   form.startForm()
     .then(callback)
 })
@@ -43,6 +44,7 @@ When('eu confirmo sem informar um campo obrigatório', function (callback) {
 
 // THEN
 Then('devo ver a opção de informar meu nome', {timeout: 90 * 1000}, function (callback) {
+  form.sleep(5000)
   form.nameField.isDisplayed().then(function (response) {
     expect(response).to.equal(true)
   })
